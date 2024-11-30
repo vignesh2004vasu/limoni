@@ -71,6 +71,32 @@ export default function TabsLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="login"
+        options={{
+          headerTitle: "login page for user",
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? "log-in" : "log-in-outline"}
+              size={30}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="register"
+        options={{
+          headerTitle: "register page for user",
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? "log-in" : "log-in-outline"}
+              size={30}
+              color={color}
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 }

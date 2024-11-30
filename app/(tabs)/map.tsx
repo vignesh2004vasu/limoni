@@ -1,7 +1,41 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
-import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
-import { useNavigation } from "expo-router";
+import { StyleSheet, View } from "react-native";
+
+let loc = [
+  {
+    title: "Home1",
+    location: {
+      latitude: 10.932127952575684,
+      longitude: 76.92491149902344,
+    },
+    description: "My home",
+  },
+  {
+    title: "college",
+    location: {
+      latitude: 10.925861,
+      longitude: 76.9224673,
+    },
+    description: "my college",
+  },
+  {
+    title: " E bustand",
+    location: {
+      latitude: 11.3468483,
+      longitude: 77.720001,
+    },
+    description: "my college",
+  },
+  {
+    title: " k bustand",
+    location: {
+      latitude: 11.0063238,
+      longitude: 77.5606106,
+    },
+    description: "my college",
+  },
+];
 
 const INITIAL_REGION = {
   latitude: 10.932127952575684,
@@ -11,23 +45,30 @@ const INITIAL_REGION = {
 };
 
 export default function App() {
+  const sl = () => {
+    return loc.map((item, index) => {
+      return (
+        <Marker
+          key={index}
+          coordinate={item.location}
+          title={item.title}
+          description={item.description}
+          pinColor="blue"
+        />
+      );
+    });
+  };
+
   return (
     <View style={styles.container}>
       <MapView
         style={styles.map}
-        mapType="satellite"
+        provider={PROVIDER_GOOGLE}
         initialRegion={INITIAL_REGION}
-        showsUserLocation={true}
-        showsMyLocationButton={true}
-      />
-      <Marker
-        coordinate={{
-          latitude: 10.932127952575684,
-          longitude: 76.92491149902344,
-        }}
-        title="Marker Title"
-        description="Marker Description"
-      />
+        showsUserLocation
+      >
+        {sl()} {/* Markers are now inside the MapView */}
+      </MapView>
     </View>
   );
 }
