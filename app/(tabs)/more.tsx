@@ -1,9 +1,9 @@
 import { Text, View, StyleSheet } from "react-native";
 
-export default function Index() {
+export default function MoreScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello vignesh</Text>
+      <Text style={styles.text}>More screen</Text>
     </View>
   );
 }
