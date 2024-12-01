@@ -8,12 +8,12 @@ export default function TabsLayout() {
 
   const handleLogout = async () => {
     try {
-      // Clear the user data from AsyncStorage
+      // Clear user data from AsyncStorage
       await AsyncStorage.removeItem("user");
-      await AsyncStorage.removeItem("token"); // Remove token if stored
+      await AsyncStorage.removeItem("token");
 
-      // Redirect to login screen
-      router.push("/login");
+      // Redirect to login screen after logout
+      router.push("/"); // Ensure this routes to the login screen
     } catch (error) {
       console.error("Error during logout", error);
     }
@@ -33,39 +33,11 @@ export default function TabsLayout() {
         },
       }}
     >
-      {/* Login and Register tabs come first */}
       <Tabs.Screen
         name="index"
         options={{
-          headerTitle: "Login page for user",
-          tabBarLabel: "Login",
-          tabBarIcon: ({ focused, color }) => (
-            <Ionicons
-              name={focused ? "log-in" : "log-in-outline"}
-              size={30}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="register"
-        options={{
-          headerTitle: "Register page for user",
-          tabBarIcon: ({ focused, color }) => (
-            <Ionicons
-              name={focused ? "log-in" : "log-in-outline"}
-              size={30}
-              color={color}
-            />
-          ),
-        }}
-      />
-
-      <Tabs.Screen
-        name="home"
-        options={{
           headerTitle: "Home page",
+          tabBarLabel: "Home",
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
               name={focused ? "home-sharp" : "home-outline"}
@@ -78,7 +50,7 @@ export default function TabsLayout() {
               name="log-out"
               size={24}
               color="white"
-              onPress={handleLogout} // Call handleLogout on press
+              onPress={handleLogout} // Logout on press
             />
           ),
         }}
@@ -89,9 +61,7 @@ export default function TabsLayout() {
           headerTitle: "Ticket page",
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
-              name={
-                focused ? "ticket-sharp" : "ticket-outline"
-              }
+              name={focused ? "ticket-sharp" : "ticket-outline"}
               size={30}
               color={color}
             />
@@ -101,7 +71,7 @@ export default function TabsLayout() {
               name="log-out"
               size={24}
               color="white"
-              onPress={handleLogout} // Call handleLogout on press
+              onPress={handleLogout} // Logout on press
             />
           ),
         }}
@@ -124,7 +94,7 @@ export default function TabsLayout() {
               name="log-out"
               size={24}
               color="white"
-              onPress={handleLogout} // Call handleLogout on press
+              onPress={handleLogout} // Logout on press
             />
           ),
         }}
@@ -145,7 +115,7 @@ export default function TabsLayout() {
               name="log-out"
               size={24}
               color="white"
-              onPress={handleLogout} // Call handleLogout on press
+              onPress={handleLogout} // Logout on press
             />
           ),
         }}
