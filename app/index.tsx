@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useRouter } from "expo-router";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
 import {
   View,
   Text,
@@ -10,49 +8,21 @@ import {
   Alert,
   StyleSheet,
 } from "react-native";
-import axios from "axios";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleLogin = async () => {
-    if (!email || !password) {
-      Alert.alert("Error", "All fields are required");
-      return;
-    }
+  const handleLogin = () => {
+    const staticUsername = "username";
+    const staticPassword = "password";
 
-    try {
-      const response = await axios.post(
-        "http://192.168.31.148:3000/api/auth/login",
-        {
-          email,
-          password,
-        }
-      );
-
-      const userData = response.data.message;
-      const token = response.data.token;
-
-      if (userData) {
-        await AsyncStorage.setItem("user", userData);
-        await AsyncStorage.setItem("token", token);
-
-        Alert.alert("Success", "Login successful!");
-        router.push("/(tabs)"); // Navigate to tabs after login
-      } else {
-        Alert.alert("Error", "Invalid user data received");
-      }
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        Alert.alert(
-          "Error",
-          error.response?.data?.error || "Something went wrong."
-        );
-      } else {
-        Alert.alert("Error", "An unexpected error occurred.");
-      }
+    if (email === staticUsername && password === staticPassword) {
+      Alert.alert("Success", "Login successful!");
+      router.push("/(tabs)"); // Navigate to tabs after login
+    } else {
+      Alert.alert("Error", "Invalid username or password.");
     }
   };
 
