@@ -5,15 +5,10 @@ import { useRouter } from "expo-router";
 
 export default function TabsLayout() {
   const router = useRouter();
-
   const handleLogout = async () => {
     try {
-      // Clear user data from AsyncStorage
       await AsyncStorage.removeItem("user");
-      await AsyncStorage.removeItem("token");
-
-      // Redirect to login screen after logout
-      router.push("/"); // Ensure this routes to the login screen
+      router.replace("/(auth)/index");
     } catch (error) {
       console.error("Error during logout", error);
     }
