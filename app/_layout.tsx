@@ -11,14 +11,28 @@ const CustomHeader = () => {
   const router = useRouter();
 
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", padding: 10 ,backgroundColor:"#25293d"}}>
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        padding: 10,
+        backgroundColor: "#25293d",
+      }}
+    >
       <TouchableOpacity onPress={() => router.push("/")}>
         <Image
           source={require("../assets/images/favicon.png")} // Replace with your logo path
           style={{ width: 50, height: 50 }}
         />
       </TouchableOpacity>
-      <Text style={{ marginLeft: 10, fontSize: 20, fontWeight: "bold",color:"#FFFFFF" }}>
+      <Text
+        style={{
+          marginLeft: 10,
+          fontSize: 20,
+          fontWeight: "bold",
+          color: "#FFFFFF",
+        }}
+      >
         LIMONI
       </Text>
     </View>
@@ -79,7 +93,7 @@ export default function RootLayout() {
         />
       </Stack>
 
-      {isAuthenticated && <Redirect href="/(tabs)/home" />}
+      {isAuthenticated && <Redirect href={"/(tabs)"} />}
     </PaperProvider>
   );
 }

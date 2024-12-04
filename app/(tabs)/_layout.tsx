@@ -59,6 +59,7 @@ export default function TabsLayout() {
         name="tickets"
         options={{
           headerTitle: "Ticket page",
+          tabBarLabel: "Ticket",
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
               name={focused ? "ticket-sharp" : "ticket-outline"}
@@ -76,15 +77,15 @@ export default function TabsLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
-        name="more"
+        name="map"
         options={{
-          headerTitle: "More page",
+          headerTitle: "Speed Zone Limits",
+          tabBarLabel: "Map",
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
-              name={
-                focused ? "information-circle" : "information-circle-outline"
-              }
+              name={focused ? "map-sharp" : "map-outline"}
               size={30}
               color={color}
             />
@@ -100,12 +101,35 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="map"
+        name="query"
         options={{
-          headerTitle: "Map page for user",
+          headerTitle: "Query page",
+          tabBarLabel: "Query",
           tabBarIcon: ({ focused, color }) => (
             <Ionicons
-              name={focused ? "map-sharp" : "map-outline"}
+              name={focused ? "alert-circle" : "alert-circle-outline"}
+              size={30}
+              color={color}
+            />
+          ),
+          headerRight: () => (
+            <Ionicons
+              name="log-out"
+              size={24}
+              color="white"
+              onPress={handleLogout} // Logout on press
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="nominee"
+        options={{
+          headerTitle: "Nominee page",
+          tabBarLabel: "Nominee",
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? "people-circle-sharp" : "people-circle-outline"}
               size={30}
               color={color}
             />
