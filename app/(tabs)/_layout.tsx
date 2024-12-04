@@ -8,7 +8,7 @@ export default function TabsLayout() {
   const handleLogout = async () => {
     try {
       await AsyncStorage.removeItem("user");
-      router.replace("/(auth)/index");
+      router.replace("/");
     } catch (error) {
       console.error("Error during logout", error);
     }
