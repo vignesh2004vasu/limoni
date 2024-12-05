@@ -139,6 +139,28 @@ export default function TabsLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="web"
+        options={{
+          headerTitle: "Nominee page",
+          tabBarLabel: "Nominee",
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? "people-circle-sharp" : "people-circle-outline"}
+              size={30}
+              color={color}
+            />
+          ),
+          headerRight: () => (
+            <Ionicons
+              name="log-out"
+              size={24}
+              color="white"
+              onPress={handleLogout} // Logout on press
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
