@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "expo-router";
 import {
   View,
@@ -9,7 +9,6 @@ import {
   StyleSheet,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -26,7 +25,6 @@ const LoginScreen = () => {
     checkLogin();
   }, []);
 
-
   const handleLogin = async () => {
     const staticUsername = "username";
     const staticPassword = "password";
@@ -35,6 +33,10 @@ const LoginScreen = () => {
       await AsyncStorage.setItem("user", JSON.stringify({ email }));
       Alert.alert("Success", "Login successful!");
       router.push("/(tabs)"); // Navigate to tabs after login
+    } else if (email === "admin" && password === "admin") {
+      await AsyncStorage.setItem("user", JSON.stringify({ email }));
+      Alert.alert("Success", "Login successful!");
+      router.push("/(admin)");
     } else {
       Alert.alert("Error", "Invalid username or password.");
     }

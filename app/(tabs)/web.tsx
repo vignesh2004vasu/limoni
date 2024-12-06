@@ -6,7 +6,7 @@ const WebPageScreen = () => {
   return (
     <View style={styles.container}>
       <WebView 
-        source={{ uri: 'https://www.youtube.com/watch?v=3j9DcRCxrFg' }} 
+        source={{ uri: 'https://limoni-nerd-dev.netlify.app' }} 
         style={styles.webview} 
       />
     </View>
