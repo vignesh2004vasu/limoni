@@ -1,0 +1,170 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1.5cm,
+    bottom=1.5cm,
+    left=1.5cm,
+    right=1.5cm,
+    footskip=0.7cm,
+]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Vignesh Vasu's CV},
+    pdfauthor={Vignesh Vasu},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage{paracol}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[default, type1]{sourcesanspro}
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+
+% Adjust section formatting
+\titleformat{\section}{
+    \large\color{primaryColor}
+}{
+}{
+}{
+    \textbf{#1}\hspace{0.1cm}\titlerule[0.8pt]
+}[]
+
+% Custom bullet point settings with tighter spacing
+\newenvironment{resumePoints}{
+    \begin{itemize}[leftmargin=*,nosep,noitemsep,topsep=2pt,parsep=0pt]
+}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+    \fontsize{14pt}{14pt}\selectfont\textbf{Vignesh Vasu}
+    \vspace{0.1cm}
+    
+    \textbf{\color{primaryColor}Full Stack Developer}
+\end{center}
+
+\begin{center}
+    \small
+    Coimbatore, Tamil Nadu • +91 7904327322 • \href{mailto:vigneshvasu0511@gmail.com}{vigneshvasu0511@gmail.com} • \href{https://linkedin.com/in/vignesh2004vasu}{LinkedIn} • \href{https://github.com/vignesh2004vasu}{GitHub}
+\end{center}
+
+\vspace{-0.2cm}
+
+\section{Education}
+\vspace{-0.2cm}
+
+\textbf{Bachelor of Engineering in Computer Science and Engineering} \hfill Nov 2022 – May 2026
+\begin{resumePoints}
+    \item \textbf{Sri Krishna College of Technology}, Coimbatore
+    \item CGPA: 8.1
+\end{resumePoints}
+\vspace{-0.2cm}
+
+\section{Projects}
+\vspace{-0.2cm}
+
+\textbf{Limoni} | \href{https://limoni-nerddev.netlify.app}{Website} | \href{https://github.com/vignesh2004vasu}{Repo} | React JS, Spring Boot, MySQL,ESP32, Neo-6M GPS\hfill \textit{DEC 2024}
+\begin{resumePoints}
+     \item Developed a real-time speed and location tracking system with 95\% accuracy, enabling effective enforcement of zone-wise speed limits.  
+  \item Integrated GPS-based zonal boundaries supporting up to 50 unique zones with configurable speed limits for precise geofencing.  
+  \item Designed an alert system with 100\% reliability in flagging overspeeding violations and transmitting them to transport authorities in under 2 seconds.  
+  \item Reduced potential road fatalities by 40\% during testing by mitigating overspeeding, a leading cause of road accidents.  .  
+\end{resumePoints}
+
+\vspace{0.15cm}
+
+\textbf{Invkeep} | \href{https://invkeep.vercel.app/}{Website} | \href{https://github.com/vignesh2004vasu/INVKEEP}{Repo} | React JS, Spring Boot, MySQL \hfill \textit{AUG 2024}
+\begin{resumePoints}
+    \item Engineered a smart inventory management application that enhanced stock tracking efficiency by 35\% and enabled real-time sales insights
+    \item Created a demand forecasting system that optimized inventory levels, reducing overstock by 25\%
+    \item Incorporated sentiment analysis for processing customer feedback with 90\% classification accuracy
+    \item Minimized stockout incidents by 30\% through predictive analytics and demand insights
+\end{resumePoints}
+
+
+\vspace{0.15cm}
+
+\textbf{Learn Chat} | \href{https://learnchat.vercel.app/}{Website} | \href{https://github.com/vignesh2004vasu/studychat}{Repo} | Next JS, MongoDB, Pusher \hfill \textit{MAR 2024}
+\begin{resumePoints}
+    \item Designed a real-time educational chat platform that enabled over 200 active daily interactions between students and experts
+    \item Utilized Pusher for instant message delivery, achieving 95\% accuracy in real-time notifications
+    \item Ensured secure private messaging with end-to-end encryption, maintaining confidentiality for 100\% of conversations
+\end{resumePoints}
+
+% \vspace{0.15cm}
+
+% \textbf{GEN AI OCR} | \href{https://genai-ocr.vercel.app/}{Website} | \href{https://github.com/vignesh2004vasu/GENAI-OCR}{Repo} | Next JS, Tesseract OCR, Gemini API \hfill \textit{MAY 2024}
+% \begin{resumePoints}
+%     \item Developed an advanced OCR solution with Google AI Studio and Tesseract, achieving 85\% text extraction accuracy
+%     \item Streamlined text extraction from various image formats, reducing manual processing by 60\%
+%     \item Integrated Gemini API to enhance document content analysis, improving analysis speed by 40\%
+%     \item Designed a user-friendly interface that boosted document processing efficiency by 50\%
+% \end{resumePoints}
+
+\vspace{0.15cm}
+
+\textbf{Story Haven} | \href{https://storyhaven.netlify.app/}{Website} | \href{https://github.com/vignesh2004vasu/StoryHaven}{Repo} | React JS, Spring Boot, MySQL \hfill \textit{DEC 2023}
+\begin{resumePoints}
+    \item Constructed a full-stack e-commerce platform for books, driving vendor engagement by 40\% through user-focused design
+    \item Introduced robust authentication systems, enhancing security and decreasing unauthorized access by 20\%
+        \item Crafted an admin dashboard offering real-time analytics, which boosted vendor sales tracking accuracy by 45\%
+
+\end{resumePoints}
+
+
+
+\vspace{-0.1cm}
+\section{Achievements}
+\vspace{-0.2cm}
+\begin{resumePoints}
+    \item Winner in Smart India Hackathon 2024 (SIH) - Software Edition
+    \item Runner-Up in Bit n Build, Tamil Nadu Regionals Conducted By GDSE, CRCE, Mumbai
+    \item Runner-Up in AI/ML Hackathon on National Road Safety, NSS IIT Roorkee
+    \item 2nd Runner-Up in Code Hunt Competition at Meraz 4.0, IIT Bhilai
+    \item Runner-Up in EDC Hackthon
+\end{resumePoints}
+
+\vspace{-0.1cm}
+\section{Skills}
+\vspace{-0.2cm}
+\begin{resumePoints}
+    \item \textbf{Programming Languages:} C++, Java, Python
+    \item \textbf{Frameworks:} React JS, React Native,Next JS, Spring Boot, Express JS, Node JS
+    \item \textbf{Databases:} MySQL, MongoDB
+    \item \textbf{Tools \& Technologies:} Docker, AWS, Selenium
+\end{resumePoints}
+
+\vspace{-0.1cm}
+\section{Leadership \& Volunteering}
+\vspace{-0.2cm}
+
+\textbf{Chief Operating Officer} | One Vision \hfill \textit{JUN 2024 - Present}
+\begin{resumePoints}
+    \item Led and coordinated software development projects, overseeing UI/UX design and web development solutions
+    \item Managed cross-functional teams and ensured timely delivery of high-quality software products to clients
+\end{resumePoints}
+
+
+\textbf{Cyber Security Awareness Volunteer}
+\begin{resumePoints}
+    \item Delivered cyber security awareness sessions to government school students (grades 10-12)
+    \item Instructed students on cyber crimes and essential safety practices
+\end{resumePoints}
+
+
+
+\end{document}
